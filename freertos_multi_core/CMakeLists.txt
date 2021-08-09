@@ -1,0 +1,11 @@
+add_executable(freertos_multi_core
+        main.cpp
+)
+
+target_link_libraries(freertos_multi_core pico_stdlib pico_multicore freertos)
+
+# enable USB output and disable UART output
+pico_enable_stdio_usb(freertos_multi_core 1)
+pico_enable_stdio_uart(freertos_multi_core 0)
+
+pico_add_extra_outputs(freertos_multi_core)
